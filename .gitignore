@@ -1,7 +1,6 @@
 # Logs
 logs
 *.log
-npm-debug.log*
 
 # Runtime data
 pids
@@ -24,10 +23,19 @@ coverage
 build/Release
 
 # Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-# Optional npm cache directory
-.npm
+# Vagrant
+.vagrant
 
-# Optional REPL history
-.node_repl_history
+# IDEA (Webstorm)
+.idea
+
+# Visual Studio Code
+.vscode
+
+# bcrypt windows
+build
+src
+binding.gyp
