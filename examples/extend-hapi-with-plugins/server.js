@@ -19,6 +19,7 @@ server.route({
   }
 })
 
+// register plugins to server instance
 server.register({
   register: Good,
   options: {
