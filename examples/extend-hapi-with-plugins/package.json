@@ -1,0 +1,16 @@
+{
+  "name": "hapi-getting-started",
+  "version": "1.0.0",
+  "description": "Getting started with hapi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Poehls <marcus@futurestud.io>",
+  "license": "MIT",
+  "dependencies": {
+    "good": "~6.6.0",
+    "good-console": "~5.3.1",
+    "hapi": "~13.3.0"
+  }
+}
