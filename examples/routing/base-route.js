@@ -14,7 +14,7 @@ var baseRoutes = {
         method: [ 'POST', 'PUT' ],
         path: '/',
         handler: function (request, reply) {
-          reply('Hey Bro, awesome to see you around!');
+          reply('Hey Bro, awesome to see you around!')
         }
       },
       {
@@ -22,7 +22,7 @@ var baseRoutes = {
         path: '/page/{page*}',
         handler: function (request, reply) {
           var page = request.params.page || 1
-          reply('Greetings from page: ' + encodeURIComponent(page));
+          reply('Greetings from page: ' + encodeURIComponent(page))
         }
       }
     ]
