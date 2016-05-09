@@ -1,4 +1,5 @@
 var Hapi = require('hapi')
+var Good = require('good')
 
 // create new server instance
 var server = new Hapi.Server()
@@ -10,9 +11,23 @@ server.connection({
 })
 
 // register plugins to server instance
-server.register({
-  register: require('./base-route')
-})
+server.register([
+  {
+    register: require('./base-route')
+  },
+  {
+    register: Good,
+    options: {
+      reporters: [{
+        reporter: require('good-console'),
+        events: {
+          response: '*',
+          log: '*'
+        }
+      }]
+    }
+  }
+])
 
 // start your server
 server.start(function (err) {
@@ -20,5 +35,5 @@ server.start(function (err) {
     throw err
   }
 
-  console.log('Server running at: ' + server.info.uri)
+  server.log('info', 'Server running at: ' + server.info.uri)
 })

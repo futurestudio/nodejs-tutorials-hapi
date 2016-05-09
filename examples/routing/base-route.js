@@ -14,14 +14,15 @@ var baseRoutes = {
         method: [ 'POST', 'PUT' ],
         path: '/',
         handler: function (request, reply) {
-          reply('Hello Future Studio');
+          reply('Hey Bro, awesome to see you around!');
         }
       },
       {
         method: 'GET',
-        path: '/page/{page}',
+        path: '/page/{page*}',
         handler: function (request, reply) {
-          reply('Greetings from page ' + encodeURIComponent(request.params.page));
+          var page = request.params.page || 1
+          reply('Greetings from page: ' + encodeURIComponent(page));
         }
       }
     ]
