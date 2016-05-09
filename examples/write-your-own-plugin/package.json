@@ -1,7 +1,7 @@
 {
-  "name": "hapi-plugins",
+  "name": "hapi-write-your-own-plugin",
   "version": "1.0.0",
-  "description": "Extend hapi with plugins",
+  "description": "add your own plugin to hapi server",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,6 @@
   "author": "Marcus Poehls <marcus@futurestud.io>",
   "license": "MIT",
   "dependencies": {
-    "good": "~6.6.0",
-    "good-console": "~5.3.1",
     "hapi": "~13.3.0"
   }
 }
