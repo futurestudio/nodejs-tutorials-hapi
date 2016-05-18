@@ -11,6 +11,7 @@
     "good": "~7.0.0",
     "good-console": "~6.1.1",
     "good-squeeze": "~3.0.1",
+    "handlebars": "~4.0.5",
     "hapi": "~13.4.0",
     "inert": "~4.0.0",
     "vision": "~4.1.0"
