@@ -8,9 +8,11 @@
   "author": "Marcus Poehls <marcus@futurestud.io>",
   "license": "MIT",
   "dependencies": {
-    "good": "~6.6.3",
-    "good-console": "~5.3.2",
-    "hapi": "~13.3.0",
-    "inert": "~4.0.0"
+    "good": "~7.0.0",
+    "good-console": "~6.1.1",
+    "good-squeeze": "~3.0.1",
+    "hapi": "~13.4.0",
+    "inert": "~4.0.0",
+    "vision": "~4.1.0"
   }
 }

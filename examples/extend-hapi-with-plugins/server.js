@@ -23,13 +23,22 @@ server.route({
 server.register({
   register: Good,
   options: {
-    reporters: [{
-      reporter: require('good-console'),
-      events: {
-        response: '*',
-        log: '*'
-      }
-    }]
+    ops: {
+      interval: 10000
+    },
+    reporters: {
+      console: [
+        {
+          module: 'good-squeeze',
+          name: 'Squeeze',
+          args: [ { log: '*', response: '*', request: '*' } ]
+        },
+        {
+          module: 'good-console'
+        },
+        'stdout'
+      ]
+    }
   }
 })
 

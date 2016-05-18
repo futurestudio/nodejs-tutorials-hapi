@@ -18,22 +18,31 @@ server.register([
   {
     register: Good,
     options: {
-      reporters: [{
-        reporter: require('good-console'),
-        events: {
-          response: '*',
-          log: '*'
-        }
-      }]
+      ops: {
+        interval: 10000
+      },
+      reporters: {
+        console: [
+          {
+            module: 'good-squeeze',
+            name: 'Squeeze',
+            args: [ { log: '*', response: '*', request: '*' } ]
+          },
+          {
+            module: 'good-console'
+          },
+          'stdout'
+        ]
+      }
     }
   }
-])
+], function (err) {
+  // start your server after plugin registration
+  server.start(function (err) {
+    if (err) {
+      throw err
+    }
 
-// start your server
-server.start(function (err) {
-  if (err) {
-    throw err
-  }
-
-  server.log('info', 'Server running at: ' + server.info.uri)
+    server.log('info', 'Server running at: ' + server.info.uri)
+  })
 })
