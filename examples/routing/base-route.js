@@ -1,12 +1,12 @@
 var baseRoutes = {
   register: function (server, options, next) {
     var routes = [
-      // add “hello world” GET route
+      // optional parameter
       {
         method: 'GET',
-        path: '/',
+        path: '/{identifier?}',
         handler: function (request, reply) {
-          reply('Hello Future Studio')
+          reply('Hello Future Studio! You requested data for ' + encodeURIComponent(request.params.identifier))
         }
       },
       // add exemplary POST route
