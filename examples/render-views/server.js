@@ -1,6 +1,7 @@
 var Hapi = require('hapi')
 var Good = require('good')
 var Vision = require('vision')
+var Handlebars = require('handlebars')
 
 
 // create new server instance
@@ -52,7 +53,7 @@ server.register([
    */
   server.views({
     engines: {
-      html: require('handlebars')
+      html: Handlebars
     },
     path: __dirname + '/views',
     layout: true
