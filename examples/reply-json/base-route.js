@@ -8,7 +8,10 @@ var baseRoutes = {
           var data = {
             key: 'value',
             another: false,
-            number: 10
+            number: 10,
+            func: function() {
+              return this.number * 10
+            }
           }
 
           reply(data)
