@@ -1,8 +1,9 @@
 var Hapi = require('hapi')
 var Good = require('good')
+var Bcrypt = require('bcrypt')
 var Vision = require('vision')
 var Handlebars = require('handlebars')
-
+var BasicAuth = require('hapi-auth-basic')
 
 // create new server instance
 var server = new Hapi.Server()
@@ -38,6 +39,9 @@ server.register([
         ]
       }
     }
+  },
+  {
+    register: BasicAuth
   }
 ], function (err) {
   if (err) {
@@ -60,20 +64,38 @@ server.register([
   })
   server.log('info', 'View configuration completed')
 
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: function(request, reply) {
-      var data = {
-        title: 'Hapi Render Views',
-        message: 'Wohoo \\o/ Your view has been rendered successfully!'
-      }
-
-      reply.view('index', data)
+  // hardcoded users object … just for illustration purposes
+  var users = {
+    future: {
+      username: 'future',
+      password: '$2a$04$YPy8WdAtWswed8b9MfKixebJkVUhEZxQCrExQaxzhcdR2xMmpSJiG',   // 'studio'
+      name: 'Future Studio',
+      id: '1'
     }
-  })
-  server.log('info', 'Route registered')
+  }
+
+  // validation function used for hapi-auth-basic
+  var basicValidation  = function (request, username, password, callback) {
+    var user = users[ username ]
+
+    if (!user) {
+      return callback(null, false)
+    }
+
+    Bcrypt.compare(password, user.password, function (err, isValid) {
+      server.log('info', 'user authentication successful')
+      callback(err, isValid, { id: user.id, name: user.name })
+    })
+  }
+
+  server.auth.strategy('basic', 'basic', { validateFunc: basicValidation })
+  server.log('info', 'Registered auth strategy: basic auth')
+
+  var routes = require('./basic-routes')
+  server.route(routes)
+  server.log('info', 'Routes registered')
+
+
 
   // start your server after plugin registration
   server.start(function (err) {
