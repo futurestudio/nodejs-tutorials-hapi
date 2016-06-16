@@ -64,7 +64,7 @@ server.register([
   })
   server.log('info', 'View configuration completed')
 
-  // validation function used for hapi-auth-cookie
+  // validation function used for hapi-auth-cookie: optional and checks if the user is still existing
   var validation = function (request, session, callback) {
     var username = session.username
     var user = Users[ username ]
