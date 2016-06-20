@@ -11,11 +11,7 @@ var routes = [
         strategies: ['simple',  'session']
       },
       handler: function (request, reply) {
-        if (request.auth.isAuthenticated) {
-          return reply.view('profile')
-        }
-
-        reply.view('index')
+        return reply.view('profile')
       }
     }
   },
