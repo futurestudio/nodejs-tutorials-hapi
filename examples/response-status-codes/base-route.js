@@ -27,7 +27,7 @@ var baseRoutes = {
         path: '/empty',
   config: {
     response: {
-      emptyStatusCode: '204'
+      emptyStatusCode: 204
     },
     handler: function (request, reply) {
       reply()
