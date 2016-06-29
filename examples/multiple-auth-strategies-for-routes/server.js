@@ -17,10 +17,7 @@ server.connection({
 })
 
 // register plugins to server instance
-server.register([
-  {
-    register: Vision
-  },
+server.register([ Vision, BasicAuth, CookieAuth,
   {
     register: Good,
     options: {
@@ -41,12 +38,6 @@ server.register([
         ]
       }
     }
-  },
-  {
-    register: BasicAuth
-  },
-  {
-    register: CookieAuth
   }
 ], function (err) {
   if (err) {
@@ -69,9 +60,8 @@ server.register([
   })
   server.log('info', 'View configuration completed')
 
-
   // validation function used for hapi-auth-basic
-  var basicValidation  = function (request, username, password, callback) {
+  var basicValidation = function (request, username, password, callback) {
     var user = Users[ username ]
 
     if (!user) {
