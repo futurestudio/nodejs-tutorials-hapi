@@ -84,7 +84,7 @@ server.register([
     })
   }
 
-  server.auth.strategy('simple', 'basic', true, { validateFunc: basicValidation })
+  server.auth.strategy('simple', 'basic', { validateFunc: basicValidation })
   server.log('info', 'Registered auth strategy: basic auth')
 
   // validation function used for hapi-auth-cookie: optional and checks if the user is still existing
@@ -108,6 +108,9 @@ server.register([
     validateFunc: cookieValidation
   })
   server.log('info', 'Registered auth strategy: cookie auth')
+
+  // default auth strategy avoids server crash for routes that doesn’t specify auth config
+  server.auth.default('simple')
 
   var routes = require('./routes')
   server.route(routes)
