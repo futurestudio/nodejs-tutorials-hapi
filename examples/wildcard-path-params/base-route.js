@@ -3,7 +3,7 @@ var plugin = {
     var routes = [
       {
         method: 'GET',
-        path: '/{param?}',
+        path: '/wildcard/{param*3}',
         handler: function (request, reply) {
           var params = request.params
 
@@ -22,7 +22,7 @@ var plugin = {
 }
 
 plugin.register.attributes = {
-  name: 'optional-path-params',
+  name: 'wildcard-path-params',
   version: '1.0.0'
 }
 
