@@ -3,8 +3,21 @@ var plugin = {
     var routes = [
       {
         method: 'GET',
-        path: '/wildcard/{param*3}',
+        path: '/{param*}',
         handler: function (request, reply) {
+          // this route matches everything except the restrictive route definition below
+          var params = request.params
+
+          server.log('info', params)
+
+          reply(params)
+        }
+      },
+      {
+        method: 'GET',
+        path: '/filter/{type*2}',
+        handler: function (request, reply) {
+          // this route matches only if 2 path segments are provided after "filter"
           var params = request.params
 
           server.log('info', params)
