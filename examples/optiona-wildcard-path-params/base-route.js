@@ -2,15 +2,15 @@ var plugin = {
   register: function (server, options, next) {
     var routes = [
       {
-  method: 'GET',
-  path: '/',
-  handler: function (request, reply) {
-    var params = request.query
+        method: 'GET',
+        path: '/{path?}',
+        handler: function (request, reply) {
+          var params = request.params
 
-    server.log('info', params)
+          server.log('info', params)
 
-    reply(params)
-  }
+          reply(params)
+        }
       }
     ]
 
@@ -22,7 +22,7 @@ var plugin = {
 }
 
 plugin.register.attributes = {
-  name: 'query-param-routes',
+  name: 'path-params-optional-wildcard',
   version: '1.0.0'
 }
 
