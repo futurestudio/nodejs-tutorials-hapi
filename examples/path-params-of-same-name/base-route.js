@@ -3,7 +3,7 @@ var plugin = {
     var routes = [
       {
         method: 'GET',
-        path: '/{path?}',
+        path: '/filter/{type}',
         handler: function (request, reply) {
           var params = request.params
 
