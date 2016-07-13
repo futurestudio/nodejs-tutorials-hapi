@@ -3,7 +3,7 @@ var plugin = {
     var routes = [
       {
         method: 'GET',
-        path: '/{param*}',
+        path: '/js/{file*}',
         handler: function (request, reply) {
           // this route matches everything except the restrictive route definition below
           var params = request.params
