@@ -1,3 +1,5 @@
+var Joi = require('joi')
+
 var plugin = {
   register: function (server, options, next) {
     var routes = [
