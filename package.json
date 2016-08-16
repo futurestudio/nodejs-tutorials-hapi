@@ -14,10 +14,10 @@
     "good-console": "~6.1.2",
     "good-squeeze": "~4.0.0",
     "handlebars": "~4.0.5",
-    "hapi": "~13.4.2",
+    "hapi": "~14.2.0",
     "hapi-auth-basic": "~4.2.0",
     "hapi-auth-cookie": "~6.1.1",
-    "inert": "~4.0.0",
+    "inert": "~4.0.1",
     "joi": "~9.0.1",
     "vision": "~4.1.0"
   }
