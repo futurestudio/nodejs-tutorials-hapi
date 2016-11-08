@@ -17,9 +17,11 @@
     "hapi": "~15.2.0",
     "hapi-auth-basic": "~4.2.0",
     "hapi-auth-cookie": "~6.1.1",
+    "hapi-raven": "~4.3.1",
     "inert": "~4.0.2",
     "joi": "~9.2.0",
     "pug": "~2.0.0-beta6",
-    "vision": "~4.1.0"
+    "vision": "~4.1.0",
+    "when": "~3.7.7"
   }
 }
