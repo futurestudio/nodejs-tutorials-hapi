@@ -5,7 +5,7 @@ This repository contains code examples for the [hapi tutorial series](https://fu
 ## Dependencies
 You need the following tools installed on your machine to actually run the individual examples:
 
-- Node.js
+- Node.js v4+
 - NPM
 
 
