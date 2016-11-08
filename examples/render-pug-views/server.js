@@ -1,10 +1,12 @@
-var Hapi = require('hapi')
-var Good = require('good')
-var Vision = require('vision')
+'use strict'
+
+const Hapi = require('hapi')
+const Good = require('good')
+const Vision = require('vision')
 const Pug = require('pug')
 
 // create new server instance
-var server = new Hapi.Server()
+const server = new Hapi.Server()
 
 // add server’s connection information
 server.connection({
@@ -70,7 +72,7 @@ server.register([
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      var data = {
+      const data = {
         title: 'Hapi Render Pug Views',
         message: 'Wohoo \\o/ Your view has been rendered successfully!'
       }
