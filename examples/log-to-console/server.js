@@ -15,9 +15,6 @@ server.register([
   {
     register: Good,
     options: {
-      ops: {
-        interval: 10000
-      },
       reporters: {
         console: [
           { module: 'good-squeeze', name: 'Squeeze', args: [ { log: '*', response: '*', request: '*' } ] },
