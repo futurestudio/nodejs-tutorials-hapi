@@ -1,18 +1,15 @@
 {
   "name": "nodejs-tutorials-hapi",
-  "version": "1.0.0",
   "description": "Example code related to an extensive hapi series on Future Studio (https://futurestud.io)",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.0",
   "author": "Future Studio <info@futurestud.io>",
+  "bugs": "https://github.com/fs-opensource/nodejs-tutorials-hapi/issues",
   "contributors": [
     {
       "name": "Marcus Poehls",
       "email": "marcus@futurestud.io"
     }
   ],
-  "license": "MIT",
   "dependencies": {
     "bcrypt": "~0.8.7",
     "boom": "~4.2.0",
@@ -30,5 +27,16 @@
     "pug": "~2.0.0-beta6",
     "vision": "~4.1.0",
     "when": "~3.7.7"
+  },
+  "homepage": "https://futurestud.io/tutorials/hapi-get-your-server-up-and-running",
+  "keywords": [
+    "hapi",
+    "node.js",
+    "tutorials"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/fs-opensource/nodejs-tutorials-hapi",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
