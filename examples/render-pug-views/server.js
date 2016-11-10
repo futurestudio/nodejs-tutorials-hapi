@@ -59,7 +59,7 @@ server.register([
           const compile = Pug.compileFile(options.filename)
 
           return function (context) {
-            return compile(context);
+            return compile(context)
           }
         }
       }

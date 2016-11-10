@@ -5,7 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Marcus Poehls <marcus@futurestud.io>",
+  "author": "Future Studio <info@futurestud.io>",
+  "contributors": [
+    {
+      "name": "Marcus Poehls",
+      "email": "marcus@futurestud.io"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "bcrypt": "~0.8.7",
