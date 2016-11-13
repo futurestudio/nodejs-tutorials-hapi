@@ -15,7 +15,7 @@ const baseRoutes = {
         method: 'GET',
         path: '/slash',
         handler: function (request, reply) {
-          reply('Called route with slash at the end')
+          reply('Called the /slash route')
         }
       },
       {
