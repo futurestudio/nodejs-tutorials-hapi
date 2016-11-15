@@ -7,8 +7,10 @@ const baseRoutes = {
       method: 'GET',
       path: '/',
       handler: function (request, reply) {
-        request.log(['info'], 'this is my request message')
-        request.server.log(['info'], 'another for server')
+        // log a request message
+        request.log(['info', 'error', 'debug'], 'this is my request message')
+        // log a server message
+        request.server.log('info', 'another for server')
 
         reply('Did the work :)')
       }
