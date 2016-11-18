@@ -32,7 +32,7 @@ var plugin = {
 }
 
 plugin.register.attributes = {
-  name: 'wildcard-path-params',
+  name: 'validation-request-payload',
   version: '1.0.0'
 }
 
