@@ -13,16 +13,22 @@ server.connection({
 // register plugins to server instance
 server.register([
   {
-    register: Good,
-    options: {
-      reporters: {
-        console: [
-          { module: 'good-squeeze', name: 'Squeeze', args: [ { log: '*', response: '*', request: '*' } ] },
-          { module: 'good-console' },
-          'stdout'
-        ]
-      }
+  register: Good,
+  options: {
+    reporters: {
+      myConsole: [
+        {
+          module: 'good-squeeze',
+          name: 'Squeeze',
+          args: [ { log: '*', response: '*', request: '*' } ]
+        },
+        {
+          module: 'good-console'
+        },
+        'stdout'
+      ]
     }
+  }
   },
   {
     register: require('./base-route')
