@@ -13,7 +13,7 @@ var plugin = {
 }
 
 plugin.register.attributes = {
-  name: 'optional-path-params',
+  name: 'multiple-server-instances-backend-routes',
   version: '1.0.0'
 }
 

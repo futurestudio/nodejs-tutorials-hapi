@@ -1,5 +1,4 @@
 var Hapi = require('hapi')
-var Good = require('good')
 var _ = require('lodash')
 var port = 3000
 
