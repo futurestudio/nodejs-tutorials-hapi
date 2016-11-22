@@ -38,7 +38,6 @@ server.register([
   }
 ], function (err) {
   if (err) {
-    console.log('FEHLERHLERHLER')
     throw err
   }
 

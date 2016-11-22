@@ -17,7 +17,8 @@ var baseRoutes = {
 
             if (!cookie) {
               cookie = {
-                test: 'hello'
+                username: 'futurestudio',
+                firstVisit: false
               }
             }
 
