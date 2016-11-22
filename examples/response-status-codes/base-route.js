@@ -25,14 +25,14 @@ var baseRoutes = {
       {
         method: 'GET',
         path: '/empty',
-  config: {
-    response: {
-      emptyStatusCode: 204
-    },
-    handler: function (request, reply) {
-      reply()
-    }
-  }
+        config: {
+          response: {
+            emptyStatusCode: 204
+          },
+          handler: function (request, reply) {
+            reply()
+          }
+        }
       }
     ]
 
