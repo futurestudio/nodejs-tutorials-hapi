@@ -1,3 +1,7 @@
+# ignore premium Tutorials
+premium
+
+
 # Logs
 logs
 *.log
