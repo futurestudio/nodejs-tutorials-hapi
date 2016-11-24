@@ -7,24 +7,34 @@ var baseRoutes = {
       encoding: 'base64json'
     })
 
+    server.state('email', {
+      ttl: 1000 * 60 * 60 * 24 * 7
+    })
+
     var routes = [
       {
         method: 'GET',
         path: '/',
         config: {
           handler: function (request, reply) {
-            var cookie = request.state.session
+            var email = request.state.email
+            if (!email) {
+              email = 'info@futurestud.io'
+            }
 
-            if (!cookie) {
-              cookie = {
+            var session = request.state.session
+            if (!session) {
+              session = {
                 username: 'futurestudio',
-                firstVisit: false
+                firstvisit: false
               }
             }
 
             cookie.lastVisit = Date.now()
 
-            return reply('Hello Future Studio. Your last visit was: ' + cookie.lastVisit).state('session', cookie)
+            return reply('Hello Future Studio')
+              .state('session', session)
+              .state('email', email)
           }
         }
       }
