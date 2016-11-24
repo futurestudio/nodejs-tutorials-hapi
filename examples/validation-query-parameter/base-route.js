@@ -14,11 +14,12 @@ var plugin = {
 
             reply(queryParams)
           },
-          validate: {
-            query: {
-              filter: Joi.array().items(Joi.string().valid('premium', 'video')).single()
-            }
-          }
+validate: {
+  query: {
+    filter: Joi.array().items(Joi.string().valid('premium', 'video')).single(),
+    page: Joi.number().min(1)
+  }
+}
         }
       }
     ]

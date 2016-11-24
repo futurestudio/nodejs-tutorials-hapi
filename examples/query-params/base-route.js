@@ -2,15 +2,15 @@ var plugin = {
   register: function (server, options, next) {
     var routes = [
       {
-  method: 'GET',
-  path: '/',
-  handler: function (request, reply) {
-    var params = request.query
+        method: 'GET',
+        path: '/',
+        handler: function (request, reply) {
+          var params = request.query
 
-    server.log('info', params)
+          server.log('info', params)
 
-    reply(params)
-  }
+          reply(params)
+        }
       }
     ]
 
