@@ -1,8 +1,10 @@
-var Hapi = require('hapi')
-var Good = require('good')
+'use strict'
+
+const Hapi = require('hapi')
+const Good = require('good')
 
 // create new server instance
-var server = new Hapi.Server()
+let server = new Hapi.Server()
 
 // add server’s connection information
 server.connection({

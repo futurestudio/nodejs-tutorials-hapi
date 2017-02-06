@@ -1,11 +1,13 @@
-var plugin = {
+'use strict'
+
+const plugin = {
   register: function (server, options, next) {
-    var routes = [
+    const routes = [
       {
         method: 'GET',
         path: '/',
         handler: function (request, reply) {
-          var headers = request.headers
+          const headers = request.headers
 
           server.log('info', headers)
 
