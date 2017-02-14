@@ -4,34 +4,32 @@ const Joi = require('joi')
 
 const plugin = {
   register: function (server, options, next) {
-    const routes = [
-      {
-        method: 'POST',
-        path: '/{param}',
-        config: {
-          handler: function (request, reply) {
-            reply('You’ve passed all the validations :)')
+    server.route({
+      method: 'POST',
+      path: '/{page}',
+      config: {
+        handler: function (request, reply) {
+          reply('You’ve passed all the validations :)')
+        },
+        validate: {
+          params: {
+            page: Joi.number().required()
           },
-          validate: {
-            params: {
-              page: Joi.string().required()
-            },
-            query: {
-              test: Joi.number().optional()
-            },
-            payload: {
-              username: Joi.string().optional()
-            },
-            headers: {
-              'user-agent': Joi.string().optional()
-            }
+          query: {
+            test: Joi.number().optional()
+          },
+          payload: {
+            username: Joi.string().required()
+          },
+          headers: {
+            'user-agent': Joi.string()
+          },
+          options: {
+            allowUnknown: true
           }
         }
       }
-    ]
-
-    // add defined routes to hapi
-    server.route(routes)
+    })
 
     next()
   }

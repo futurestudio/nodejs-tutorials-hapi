@@ -2,22 +2,17 @@
 
 const plugin = {
   register: function (server, options, next) {
-    const routes = [
-      {
-        method: 'GET',
-        path: '/',
-        handler: function (request, reply) {
-          const headers = request.headers
+    server.route({
+      method: 'GET',
+      path: '/',
+      handler: function (request, reply) {
+        const headers = request.headers
 
-          server.log('info', headers)
+        server.log('info', headers)
 
-          reply(headers)
-        }
+        reply(headers)
       }
-    ]
-
-    // add defined routes to hapi
-    server.route(routes)
+    })
 
     next()
   }

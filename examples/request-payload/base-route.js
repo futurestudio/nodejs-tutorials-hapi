@@ -1,21 +1,18 @@
-var plugin = {
+'use strict'
+
+const plugin = {
   register: function (server, options, next) {
-    var routes = [
-      {
-        method: 'POST',
-        path: '/',
-        handler: function (request, reply) {
-          var payload = request.payload
+    server.route({
+      method: 'POST',
+      path: '/',
+      handler: function (request, reply) {
+        const payload = request.payload;
 
-          server.log('info', payload)
+        server.log('info', payload)
 
-          reply(payload)
-        }
+        reply(payload)
       }
-    ]
-
-    // add defined routes to hapi
-    server.route(routes)
+    })
 
     next()
   }
