@@ -9,17 +9,8 @@ const plugin = {
         method: 'GET',
         path: '/',
         config: {
-          handler: function(request, reply) {
-            const payload = request.payload
-
-            console.log(payload)
-
-            reply('Received data and file as stream')
-          },
-          payload: {
-            maxBytes: 209715200,
-            output:'stream',
-            parse: true
+          handler: function (request, reply) {
+            reply('Send a file in POST with name "file" to /upload')
           }
         }
       },
@@ -28,16 +19,33 @@ const plugin = {
         path: '/upload',
         config: {
           handler: function (request, reply) {
+            const payload = request.payload
 
-            // TODO
+            console.log(payload.file)
 
             reply(request.headers)
           },
-          validate: {
-            payload: {
-              email: Joi.string().email().required(),
-              password: Joi.string().min(6).max(200).required()
-            }
+          payload: {
+            maxBytes: 209715200,
+            output: 'file',
+            parse: true
+          }
+        }
+      },
+      {
+        method: 'POST',
+        path: '/upload-stream',
+        config: {
+          handler: function (request, reply) {
+            const payload = request.payload
+
+            console.log(payload.file)
+
+            reply(request.headers)
+          },
+          payload: {
+            output: 'stream',
+            parse: true
           }
         }
       }
