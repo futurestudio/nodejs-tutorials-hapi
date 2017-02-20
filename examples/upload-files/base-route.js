@@ -1,7 +1,5 @@
 'use strict'
 
-const Joi = require('joi')
-
 const plugin = {
   register: function (server, options, next) {
     const routes = [
@@ -21,7 +19,7 @@ const plugin = {
           handler: function (request, reply) {
             const payload = request.payload
 
-            console.log(payload.file)
+            console.log(payload)
 
             reply(request.headers)
           },
@@ -39,7 +37,7 @@ const plugin = {
           handler: function (request, reply) {
             const payload = request.payload
 
-            console.log(payload.file)
+            console.log(payload)
 
             reply(request.headers)
           },
