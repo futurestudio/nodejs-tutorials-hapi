@@ -51,7 +51,7 @@ const plugin = {
 }
 
 plugin.register.attributes = {
-  name: 'file-uploads',
+  name: 'upload-files',
   version: '1.0.0'
 }
 
