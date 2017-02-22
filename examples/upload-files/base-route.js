@@ -25,8 +25,7 @@ const plugin = {
           },
           payload: {
             maxBytes: 209715200,
-            output: 'file',
-            parse: true
+            output: 'file'
           }
         }
       },
@@ -42,8 +41,23 @@ const plugin = {
             reply(request.headers)
           },
           payload: {
-            output: 'stream',
-            parse: true
+            output: 'stream'
+          }
+        }
+      },
+      {
+        method: 'POST',
+        path: '/upload-data',
+        config: {
+          handler: function (request, reply) {
+            const payload = request.payload
+
+            console.log(payload)
+
+            reply(request.headers)
+          },
+          payload: {
+            output: 'data'
           }
         }
       }
