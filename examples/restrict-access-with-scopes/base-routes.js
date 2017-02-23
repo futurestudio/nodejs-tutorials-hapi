@@ -28,6 +28,19 @@ const routes = [
     }
   },
   {
+    method: 'GET',
+    path: '/admin',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: 'admin'
+      },
+      handler: function (request, reply) {
+        reply.view('admin')
+      }
+    }
+  },
+  {
     method: 'POST',
     path: '/',
     config: {
