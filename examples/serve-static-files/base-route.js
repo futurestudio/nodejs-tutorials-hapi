@@ -5,7 +5,16 @@ const baseRoutes = {
     const routes = [
       {
         method: 'GET',
-        path: '/directory/{file*}',
+        path: '/directory/{file}',
+        handler: {
+          directory: {
+            path: './files'
+          }
+        }
+      },
+      {
+        method: 'GET',
+        path: '/sub-directory/{file*}',
         handler: {
           directory: {
             path: './files'
