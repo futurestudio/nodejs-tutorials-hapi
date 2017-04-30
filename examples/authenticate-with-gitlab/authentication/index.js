@@ -2,9 +2,14 @@
 
 exports.register = function (server, options, next) {
   // declare dependency to bell
-  server.dependency([ 'bell' ])
+  server.dependency([ 'hapi-auth-cookie', 'bell' ])
 
-  /**
+  server.auth.strategy('session', 'cookie', {
+    password: 'ThisIsASecretPasswordForTheAuthCookie',
+    redirectTo: '/',
+    isSecure: process.env.NODE_ENV === 'production'
+  })
+    /**
    * Register 'gitlab' authentication strategy
    */
   server.auth.strategy('gitlab', 'bell', {

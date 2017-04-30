@@ -10,8 +10,13 @@ const Routes = [
   },
   {
     method: 'GET',
-    path: '/connect/gitlab',
+    path: '/auth/gitlab',
     config: Handler.connect
+  },
+  {
+    method: 'GET',
+    path: '/logout',
+    config: Handler.logout
   }
 ]
 
