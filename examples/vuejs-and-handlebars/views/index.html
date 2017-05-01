@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="column column-50 column-offset-25">
+        <br>
+        <h2>Use Vue.js and Handlebars in hapi</h2>
+        <p>
+            Both, Vue.js and Handlebars use Mustache <code>\{{ tag }}</code> templates
+            to render properties into views. This tutorial shows you how to bring
+            both worlds together:
+            server side Handlebars and client side Vue.js rendering.
+        </p>
+        <form>
+            <fieldset>
+                <label for="name">Name</label>
+                <input type="text" placeholder="Future Studio" id="name" v-model="name">
+            </fieldset>
+        </form>
+        <p>
+            Name is: \{{ name }}
+        </p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  new Vue({
+    el: '.row',
+    data: {
+      name: '',
+      tag: '\{{ tag }}'
+    }
+  })
+</script>
