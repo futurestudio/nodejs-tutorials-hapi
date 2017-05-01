@@ -1,15 +1,21 @@
 'use strict'
 
 exports.register = function (server, options, next) {
-  // declare dependency to bell
+  // declare dependency to hapi-auth-cookie and bell
   server.dependency([ 'hapi-auth-cookie', 'bell' ])
 
+  /**
+   * Register session based auth strategy to store
+   * credentials received from GitLab and keep
+   * the user logged in
+   */
   server.auth.strategy('session', 'cookie', {
     password: 'ThisIsASecretPasswordForTheAuthCookie',
     redirectTo: '/',
     isSecure: process.env.NODE_ENV === 'production'
   })
-    /**
+
+  /**
    * Register 'gitlab' authentication strategy
    */
   server.auth.strategy('gitlab', 'bell', {
