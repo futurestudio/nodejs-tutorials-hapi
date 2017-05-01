@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="column column-50 column-offset-25">
+        <br>
+        <h2>Multiple Handlebars Layouts with hapi</h2>
+        <p>
+            <a href="/">First Layout</a>
+            <a href="/second" class="float-right">Second Layout</a>
+        </p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  new Vue({
+    el: '.row',
+    data: {
+      name: '',
+      tag: '\{{ tag }}'
+    }
+  })
+</script>
