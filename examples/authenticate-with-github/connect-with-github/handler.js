@@ -40,7 +40,7 @@ const Handler = {
 
       reply.view('index', {
         error: 'There was an issue with the GitHub authentication.'
-      })
+      }).code(400)
     }
   },
 
