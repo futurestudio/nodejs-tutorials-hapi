@@ -39,7 +39,7 @@ const Handler = {
 
       reply.view('index', {
         error: 'There was an issue with GitLab authentication.'
-      })
+      }).code(400)
     }
   },
 
