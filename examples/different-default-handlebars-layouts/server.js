@@ -1,6 +1,7 @@
 'use strict'
 
 const Hapi = require('hapi')
+const Path = require('path')
 
 // create new server instance
 const server = new Hapi.Server()
@@ -28,7 +29,7 @@ server.register([
     engines: {
       html: require('handlebars')
     },
-    path: __dirname + '/views',
+    path: Path.resolve('views'),
     layout: 'layout'
   })
 
