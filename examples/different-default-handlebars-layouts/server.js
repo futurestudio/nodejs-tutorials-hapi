@@ -34,7 +34,6 @@ server.register([
 
   // start your server
   server.start(function (err) {
-
     if (err) {
       throw err
     }

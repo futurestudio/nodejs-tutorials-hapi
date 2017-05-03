@@ -9,9 +9,7 @@ const Handler = {
 
   second: {
     handler: function (request, reply) {
-      reply.view('index', null, {
-        layout: 'second-layout'
-      })
+      reply.view('index', null, { layout: 'second-layout' })
     }
   }
 }
