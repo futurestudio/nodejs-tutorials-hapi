@@ -28,13 +28,14 @@ const Handler = {
     handler: function (request, reply) {
       if (request.auth.isAuthenticated) {
         const user = request.auth.credentials.profile
-        request.cookieAuth.set({
+        const data = {
           name: user.name,
           username: user.username,
           avatar: user.avatar_url
-        })
+        }
 
-        return reply.view('authenticated', user)
+        request.cookieAuth.set(data)
+        return reply.view('authenticated', data)
       }
 
       reply.view('index', {
