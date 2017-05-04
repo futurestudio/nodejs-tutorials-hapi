@@ -29,8 +29,8 @@ server.register([
     engines: {
       html: require('handlebars')
     },
-    path: Path.resolve('views'),
-    layout: 'layout'
+    layout: 'my-layout',
+    path: Path.resolve('views')
   })
 
   // start your server
