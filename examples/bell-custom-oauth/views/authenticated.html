@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="column column-50 column-offset-25">
+        <br>
+        <h2>Signed in!</h2>
+
+        {{#if avatar}}
+        <p>
+            <img src="{{avatar}}" alt="Avatar" width="75">
+        </p>
+        {{/if}}
+
+        <p>
+            Hi {{email}}, great to see you!
+        </p>
+        <p>
+            <a href="/logout" class="button">Logout</a>
+        </p>
+    </div>
+</div>
