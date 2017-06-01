@@ -14,12 +14,6 @@ server.connection({
 // register plugins to server instance
 server.register([
   {
-    register: require('./authentication')
-  },
-  {
-    register: require('vision')
-  },
-  {
     register: require('./connect-with-github')
   }
 ], function (err) {

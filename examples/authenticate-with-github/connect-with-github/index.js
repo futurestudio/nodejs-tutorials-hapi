@@ -3,12 +3,23 @@
 const Routes = require('./routes')
 
 exports.register = (server, options, next) => {
-  server.dependency([ 'authentication', 'vision' ])
+  server.register([
+    {
+      register: require('vision')
+    },
+    {
+      register: require('./../authentication')
+    }
+  ], err => {
+    if (err) {
+      throw err
+    }
 
-  server.route(Routes)
-  server.log('info', 'Plugin registered: connect to GitHub')
+    server.route(Routes)
+    server.log('info', 'Plugin registered: connect to GitHub')
 
-  next()
+    next()
+  })
 }
 
 exports.register.attributes = {

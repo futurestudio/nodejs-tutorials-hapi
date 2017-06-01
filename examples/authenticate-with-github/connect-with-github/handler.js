@@ -15,7 +15,7 @@ const Handler = {
       if (request.auth.isAuthenticated) {
         return reply.view('authenticated', request.auth.credentials)
       }
-
+      
       reply.view('index')
     }
   },
