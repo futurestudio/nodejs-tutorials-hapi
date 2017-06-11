@@ -29,7 +29,6 @@ var routes = [
     method: 'POST',
     path: '/',
     config: {
-      // auth: 'session',
       auth: {
         mode: 'try'
       },
