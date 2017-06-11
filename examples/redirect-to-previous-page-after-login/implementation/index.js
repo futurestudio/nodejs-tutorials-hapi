@@ -6,12 +6,12 @@ exports.register = (server, options, next) => {
   server.dependency([ 'authentication', 'vision' ])
 
   server.route(Routes)
-  server.log('info', 'Plugin registered: connect to GitLab')
+  server.log('info', 'Plugin registered: redirect to previous page')
 
   next()
 }
 
 exports.register.attributes = {
-  name: 'connect-to-gitlab',
+  name: 'redirect-to-previous-page',
   version: '1.0.0'
 }
