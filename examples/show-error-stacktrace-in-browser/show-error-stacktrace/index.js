@@ -31,7 +31,8 @@ exports.register = (server, options, next) => {
       }
 
       // Header check, should take priority
-      if (accept && accept.match(/json/)) { // support REST/JSON requests
+      if (accept && accept.match(/json/)) {
+        // for REST/JSON requests
         return reply(errorResponse).code(statusCode)
       }
 
