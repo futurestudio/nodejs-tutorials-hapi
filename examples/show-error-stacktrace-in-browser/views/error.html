@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="column">
+        <br>
+        <h2>{{title}}</h2>
+        <p>{{message}}</p>
+
+        {{#if stacktrace}}
+            <pre>
+                <code>
+                    {{~ stacktrace }}
+                </code>
+            </pre>
+        {{/if}}
+
+    </div>
+</div>
