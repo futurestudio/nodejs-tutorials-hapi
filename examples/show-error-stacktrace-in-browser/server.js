@@ -22,7 +22,7 @@ server.register([
   {
     register: require('./show-error-stacktrace'),
     options: {
-      template: 'error',
+      // template: 'error',
       isProduction: process.env.NODE_ENV === 'production'
     }
   }
