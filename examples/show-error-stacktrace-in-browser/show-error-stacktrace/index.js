@@ -1,40 +1,39 @@
 'use strict'
 
-const _ = require('lodash')
-const Hoek = require('hoek')
-const Path = require('path')
 const Fs = require('fs')
+const Path = require('path')
 const TemplatePath = Path.join(__dirname, './error.html')
-let Template
-
-const Defaults = {
-  isProduction: false
-}
-
-Fs.readFile(TemplatePath, 'utf8', (err, contents) => {
-  if (err) {
-    throw err
-  }
-
-  Template = contents
-});
 
 exports.register = (server, options, next) => {
-  server.dependency([ 'vision' ])
 
-  const config = Object.assign(Defaults, options)
+  // default option values
+  const defaults = {
+    showErrors: false
+  }
 
-  // Hoek.assert(config.template, 'Error template name is required within the plugin registration options, use the "template" key.')
+  const config = Object.assign(defaults, options)
 
+  // want to render specific template? Better make sure `vision` is available :)
+  if (config.template) {
+    server.dependency([ 'vision' ])
+  }
+
+  // read and keep the default error template
+  const errorTemplate = Fs.readFileSync(TemplatePath, 'utf8')
+
+  // extend the request lifecycle at `onPreResponse`
+  // to change the default error handling behavior (if enabled)
   server.ext('onPreResponse', (request, reply) => {
-    if (config.isProduction) {
+    if (!config.showErrors) {
       return reply.continue()
     }
 
+    // response shortcut
     const response = request.response
-    const accept = request.raw.req.headers.accept
 
-    if (response.isBoom) {
+    // only show "bad implementation" developer errors, status code 500
+    if (response.isDeveloperError) {
+      const accept = request.raw.req.headers.accept
       const statusCode = response.output.payload.statusCode
 
       const errorResponse = {
@@ -43,31 +42,33 @@ exports.register = (server, options, next) => {
         message: response.message,
         method: request.raw.req.method,
         url: request.url.path,
-        // payload: request.payload,
+        payload: request.raw.req.method !== 'GET' ? request.payload : '',
         stacktrace: response.stack
       }
 
-      // Header check, should take priority
+      // take priority: check header if there's a JSON REST request
       if (accept && accept.match(/json/)) {
-        // for REST/JSON requests
         return reply(errorResponse).code(statusCode)
       }
 
+      // did the user explicitly specify an error template
       if (options.template) {
         return reply.view(options.template, errorResponse).code(statusCode)
       }
 
-      const output = Template.replace(/%(\w+)%/g, (full, token) => {
-        return errorResponse[token] || ''
+      // prepare the error template and replace %placeholder% with error specific details
+      const output = errorTemplate.replace(/%(\w+)%/g, (full, token) => {
+        return errorResponse[ token ] || ''
       })
 
       return reply(output).code(statusCode)
     }
 
+    // go ahead with the response, no developer error detected
     return reply.continue()
   })
 
-  server.log('info', 'Plugin registered: show error stacktrace')
+  // server.log('info', 'Plugin registered: show error stacktrace')
 
   next()
 }
