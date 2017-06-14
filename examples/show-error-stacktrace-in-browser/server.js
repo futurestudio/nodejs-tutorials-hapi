@@ -20,9 +20,9 @@ server.register([
     register: require('./base')
   },
   {
-    register: require('./show-error-stacktrace'),
+    register: require('hapi-dev-errors'),
     options: {
-      // template: 'error',
+      template: 'error',
       showErrors: process.env.NODE_ENV !== 'production'
     }
   }

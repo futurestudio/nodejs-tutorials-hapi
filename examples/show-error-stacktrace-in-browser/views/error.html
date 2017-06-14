@@ -2,12 +2,24 @@
     <div class="column">
         <br>
         <h2>{{title}} ({{statusCode}})</h2>
-        <p>{{message}}</p>
+        <p>
+            <strong>Called URL</strong>
+            <br>
+            <code>
+                {{method}} {{url}}
+            </code>
+        </p>
+
+        <p>
+            <strong>Error Details</strong>
+            <br>
+            {{message}}
+        </p>
 
         {{#if stacktrace}}
             <pre>
                 <code>
-                    {{~ stacktrace }}
+                    {{~ stacktrace ~}}
                 </code>
             </pre>
         {{/if}}
