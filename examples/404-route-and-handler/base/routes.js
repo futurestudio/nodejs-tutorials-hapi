@@ -9,7 +9,7 @@ const Routes = [
     config: Handler.index
   },
   {
-    method: 'GET',
+    method: [ 'GET', 'POST' ],
     path: '/{path*}',
     config: Handler.missing
   }
