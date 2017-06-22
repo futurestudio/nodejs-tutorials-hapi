@@ -29,7 +29,10 @@ server.register([
       html: require('handlebars')
     },
     path: __dirname + '/views',
-    layout: 'layout'
+    layout: 'layout',
+    context: {
+      title: '404 — Nothing here'
+    }
   })
 
   // start your server
