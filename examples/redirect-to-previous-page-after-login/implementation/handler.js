@@ -48,7 +48,7 @@ const Handler = {
         redirectTo: false
       }
     },
-    handler: function (request, reply) {
+    handler: (request, reply) => {
       if (request.auth.isAuthenticated) {
         return reply.redirect(request.query.next)
       }
@@ -57,6 +57,7 @@ const Handler = {
       const user = Users[ username ]
 
       if (!user) {
+        // no user found with given username
         return reply.view('login', {
           username,
           errormessage: 'No user registered with given credentials'
@@ -65,13 +66,15 @@ const Handler = {
 
       const password = request.payload.password
 
-      return Bcrypt.compare(password, user.password, function (err, isValid) {
+      return Bcrypt.compare(password, user.password, (err, isValid) => {
         if (isValid) {
-          request.cookieAuth.set(user);
-          return reply.redirect(request.query.next)
-          //return reply.view('private')
+          request.cookieAuth.set(user)
+
+        // redirect the user to the previous page
+        return reply.redirect(request.query.next)
         }
 
+        // given password doesn’t match the stored one
         return reply.view('login', {
           username,
           errormessage: 'No user registered with given credentials'
