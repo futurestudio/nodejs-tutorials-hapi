@@ -51,7 +51,6 @@ const Handler = {
     handler: function (request, reply) {
       if (request.auth.isAuthenticated) {
         return reply.redirect(request.query.next)
-//        return reply.view('private')
       }
 
       const username = request.payload.username

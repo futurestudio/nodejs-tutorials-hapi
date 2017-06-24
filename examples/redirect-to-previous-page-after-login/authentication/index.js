@@ -14,8 +14,8 @@ exports.register = function (server, options, next) {
 
     /**
      * Register session based auth strategy to store
-     * credentials received from GitLab and keep
-     * the user logged in
+     * and validate the session cookie received with
+     * the user’s requests
      */
     server.auth.strategy('session', 'cookie', {
       password: 'ThisIsASecretPasswordForTheAuthCookie',
