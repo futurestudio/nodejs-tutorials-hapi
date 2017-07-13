@@ -70,8 +70,12 @@ const Handler = {
         if (isValid) {
           request.cookieAuth.set(user)
 
-        // redirect the user to the previous page
-        return reply.redirect(request.query.next)
+          // check whether there’s a value for "next" query param
+          // if not, define the default "/"
+          const next = request.query.next ? request.query.next : '/'
+
+          // redirect the user to the previous page
+          return reply.redirect(next)
         }
 
         // given password doesn’t match the stored one
