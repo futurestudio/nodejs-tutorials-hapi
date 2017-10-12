@@ -33,6 +33,9 @@
     "vue-server-renderer": "~2.4.4",
     "when": "~3.7.8"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "homepage": "https://futurestud.io/tutorials/hapi-get-your-server-up-and-running",
   "keywords": [
     "hapi",
