@@ -9,6 +9,11 @@ const Routes = [
     config: Handler.index
   },
   {
+    method: 'GET',
+    path: '/dist/{path*}',
+    config: Handler.assets
+  },
+  {
     method: [ 'GET', 'POST' ],
     path: '/{path*}',
     config: Handler.missing

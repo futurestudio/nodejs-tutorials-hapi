@@ -1,0 +1,49 @@
+{
+    "name": "nodejs-tutorials-hapi-vue-ssr",
+    "description": "Example code related to an extensive hapi series on Future Studio (https://futurestud.io)",
+    "version": "1.0.0",
+    "author": "Future Studio <info@futurestud.io>",
+    "bugs": "https://github.com/fs-opensource/nodejs-tutorials-hapi/issues",
+    "contributors": [
+        {
+            "name": "Marcus Poehls",
+            "email": "marcus@futurestud.io"
+        }
+    ],
+    "dependencies": {
+        "vue": "~2.5.2"
+    },
+    "devDependencies": {
+        "babel-core": "~6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "~1.6.0",
+        "babel-preset-es2015": "~6.24.1",
+        "cross-env": "^5.0.5",
+        "css-loader": "~0.28.7",
+        "file-loader": "^1.1.4",
+        "vue-loader": "^13.0.5",
+        "vue-server-renderer": "~2.5.2",
+        "vue-ssr-webpack-plugin": "~3.0.0",
+        "vue-template-compiler": "~2.5.2",
+        "vuex": "~3.0.0",
+        "webpack": "^3.6.0",
+        "webpack-dev-server": "~2.9.2"
+    },
+    "engines": {
+        "node": ">=4.0.0"
+    },
+    "homepage": "https://futurestud.io/tutorials/hapi-get-your-server-up-and-running",
+    "keywords": [
+        "hapi",
+        "node.js",
+        "tutorials"
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/fs-opensource/nodejs-tutorials-hapi",
+    "scripts": {
+        "build": "npm run build:server && npm run build:client",
+        "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js --progress --hide-modules",
+        "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js --progress --hide-modules",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}

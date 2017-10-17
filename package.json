@@ -29,8 +29,7 @@
     "lodash": "~4.17.4",
     "pug": "~2.0.0-rc.4",
     "vision": "~4.1.1",
-    "vue": "~2.4.4",
-    "vue-server-renderer": "~2.4.4",
+    "webpack": "~3.7.1",
     "when": "~3.7.8"
   },
   "engines": {

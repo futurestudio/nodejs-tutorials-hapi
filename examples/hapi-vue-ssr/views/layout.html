@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>hapi & Vue SSR</title>
+    <title>{{title}}</title>
 
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
@@ -15,7 +16,11 @@
         }
     </style>
 </head>
+
 <body>
+    <div id="skip">
+        <a href="#app">skip to content</a>
+    </div>
 
     <div class="container">
 
@@ -23,5 +28,8 @@
 
     </div>
 
+    <script src="/dist/build.js"></script>
+
 </body>
+
 </html>
