@@ -1,0 +1,7 @@
+{
+  "name": "nodejs-tutorials-hapi-testing",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "./../../node_modules/lab/bin/lab --assert code --leaks --coverage"
+  }
+}

@@ -33,15 +33,15 @@
     "vue-server-renderer": "~2.4.4",
     "when": "~3.7.8"
   },
+  "devDependencies": {
+    "code": "~4.1.0",
+    "lab": "~14.3.1"
+  },
   "engines": {
     "node": ">=4.0.0"
   },
   "homepage": "https://futurestud.io/tutorials/hapi-get-your-server-up-and-running",
-  "keywords": [
-    "hapi",
-    "node.js",
-    "tutorials"
-  ],
+  "keywords": ["hapi", "node.js", "tutorials"],
   "license": "MIT",
   "repository": "https://github.com/fs-opensource/nodejs-tutorials-hapi",
   "scripts": {
