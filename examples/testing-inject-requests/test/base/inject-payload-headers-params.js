@@ -13,7 +13,7 @@ server
     register: require(Path.resolve(__dirname, '..', '..', 'base'))
   })
   .catch(err => {
-    done(err)
+    throw err
   })
 
 const lab = (exports.lab = Lab.script())

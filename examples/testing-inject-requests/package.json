@@ -2,6 +2,9 @@
   "name": "nodejs-tutorials-hapi-testing",
   "version": "1.0.0",
   "scripts": {
-    "test": "./../../node_modules/lab/bin/lab --assert code --leaks --coverage"
+    "test": "./../../node_modules/lab/bin/lab --assert code --leaks --coverage",
+    "test-lint": "./../../node_modules/lab/bin/lab --assert code --leaks --coverage --lint",
+    "test-lint-format":
+      "./../../node_modules/eslint/bin/eslint.js --fix ./* && ./../../node_modules/lab/bin/lab --assert code --leaks --coverage --lint"
   }
 }

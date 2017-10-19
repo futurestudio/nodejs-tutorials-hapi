@@ -1,7 +1,6 @@
 'use strict'
 
 const Hapi = require('hapi')
-const Path = require('path')
 
 // create new server instance
 const server = new Hapi.Server()
@@ -13,25 +12,22 @@ server.connection({
 })
 
 // register plugins to server instance
-server
-  .register([
-    {
-      register: require('vision')
-    },
-    {
-      register: require('./base')
+server.register([
+  {
+    register: require('vision')
+  },
+  {
+    register: require('./base')
+  }
+]).then(() => {
+  // start your server
+  server.start(function (err) {
+    if (err) {
+      throw err
     }
-  ])
-  .then(() => {
-    // start your server
-    server.start(function(err) {
-      if (err) {
-        throw err
-      }
 
-      console.log('Server running at: ' + server.info.uri)
-    })
+    console.log('Server running at: ' + server.info.uri)
   })
-  .catch(err => {
-    throw err
-  })
+}).catch(err => {
+  throw err
+})
