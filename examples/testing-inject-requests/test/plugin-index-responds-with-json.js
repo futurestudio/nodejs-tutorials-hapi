@@ -3,27 +3,27 @@
 const Lab = require('lab')
 const Code = require('code')
 const Hapi = require('hapi')
-const Path = require('path')
 
 const server = new Hapi.Server()
-server.connection({ port: 3000 })
-server
-  .register({
-    register: require(Path.resolve(__dirname, '..', '..', 'base'))
-  })
-  .catch(err => {
-    throw err
-  })
+server.connection()
+
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: (request, reply) => {
+    reply({ name: 'Marcus', isDeveloper: true })
+  }
+})
 
 const lab = (exports.lab = Lab.script())
 const experiment = lab.experiment
 const test = lab.test
 
-experiment('hapi-tutorials base plugin', () => {
-  test('test if the plugin returns JSON by default', done => {
+experiment('getting started with hapi testing', () => {
+  test('test if the route returns JSON by default', done => {
     const options = {
-      url: '/',
-      method: 'GET'
+      method: 'GET',
+      url: '/'
     }
 
     server.inject(options, response => {

@@ -10,7 +10,7 @@ const server = new Hapi.Server()
 server.connection({ port: 3000 })
 server
   .register({
-    register: require(Path.resolve(__dirname, '..', '..', 'base'))
+    register: require(Path.resolve(__dirname, '..', 'base'))
   })
   .catch(err => {
     throw err
