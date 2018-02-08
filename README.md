@@ -6,6 +6,16 @@ This repository contains code examples for the [hapi tutorial series](https://fu
 Find a [playlist on YouTube with videos on the individual tutorials](https://www.youtube.com/watch?v=-o6IxDy3pIk&list=PLpUMhvC6l7AMXP2bWhHF6UTZGseIkWUG_). Each video shows you the implementation of individual featuers. It’s all practical, watch me live code :)
 
 
+------
+
+<p align="center"><sup>This hapi tutorial series is sponsored by <a href="https://futurestud.io">Future Studio University 🚀</a></sup>
+<br><b>
+Join the <a href="https://futurestud.io/university">Future Studio University and Skyrocket in Node.js</a></b>
+</p>
+
+------
+
+
 ## Dependencies
 You need the following tools installed on your machine to actually run the individual examples:
 
