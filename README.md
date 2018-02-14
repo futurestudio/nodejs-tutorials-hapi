@@ -3,7 +3,7 @@ This repository contains code examples for the [hapi tutorial series with 80+ tu
 
 
 ## YouTube Playlist
-Find a [playlist on YouTube with videos on the individual tutorials](https://www.youtube.com/watch?v=-o6IxDy3pIk&list=PLpUMhvC6l7AMXP2bWhHF6UTZGseIkWUG_). Each video shows you the implementation of individual featuers. It’s all practical, watch me live code :)
+Find a [playlist on YouTube with videos on the individual tutorials](https://www.youtube.com/watch?v=-o6IxDy3pIk&list=PLpUMhvC6l7AMXP2bWhHF6UTZGseIkWUG_). Each video is related to a tutorial and walks you through the implementation of an individual feature. It’s all practical, watch me live code :)
 
 
 ------
