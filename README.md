@@ -1,6 +1,10 @@
 # hapi Tutorial Series
 This repository contains code examples for the [hapi tutorial series with 80+ tutorials](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running). The hapi tutorial series is published within the Future Studio University.
 
+<a href="http://learnhapi.com">	
+  <img src="https://futurestud.io/images/badges/hapi-hero-md.svg" height="30" />	
+</a>
+
 
 ## YouTube Playlist
 Find a [playlist on YouTube with videos on the individual tutorials](https://www.youtube.com/watch?v=-o6IxDy3pIk&list=PLpUMhvC6l7AMXP2bWhHF6UTZGseIkWUG_). Each video is related to a tutorial and walks you through the implementation of an individual feature. It’s all practical, watch me live code :)
