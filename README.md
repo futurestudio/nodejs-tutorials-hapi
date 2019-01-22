@@ -1,4 +1,7 @@
 # hapi Tutorial Series
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/futurestudio/nodejs-tutorials-hapi.svg)](https://greenkeeper.io/)
+
 This repository contains code examples for the [hapi tutorial series with **100+ tutorials**](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running). The hapi tutorial series is published within the Future Studio University.
 
 <a href="http://learnhapi.com">	
