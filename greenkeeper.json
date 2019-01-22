@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "examples/testing-inject-requests/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
