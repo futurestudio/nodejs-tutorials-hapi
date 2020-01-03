@@ -34,7 +34,7 @@
     "when": "~3.7.8"
   },
   "devDependencies": {
-    "eslint": "~4.9.0",
+    "eslint": "~4.19.1",
     "code": "~4.1.0",
     "lab": "~14.3.1",
     "eslint-config-standard": "~10.2.1",
