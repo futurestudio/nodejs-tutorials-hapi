@@ -1,5 +1,5 @@
-var Hapi = require('hapi')
-var Good = require('good')
+var Hapi = require('@hapi/hapi')
+var Good = require('@hapi/good')
 
 // create new server instance
 var server = new Hapi.Server()
@@ -14,14 +14,14 @@ server.connection({
 server.route({
   method: 'GET',
   path: '/',
-  handler: function (request, reply) {
-    reply('Hello Future Studio!')
+  handler: function (request, h) {
+    return 'Hello Future Studio!'
   }
 })
 
 // register plugins to server instance
 server.register({
-  register: Good,
+  plugin: Good,
   options: {
     ops: {
       interval: 10000
@@ -29,12 +29,12 @@ server.register({
     reporters: {
       console: [
         {
-          module: 'good-squeeze',
+          module: '@hapi/good-squeeze',
           name: 'Squeeze',
-          args: [ { log: '*', response: '*', request: '*' } ]
+          args: [ { log: '*', response: '*', request: '*', ops: '*' } ]
         },
         {
-          module: 'good-console'
+          module: '@hapi/good-console'
         },
         'stdout'
       ]
