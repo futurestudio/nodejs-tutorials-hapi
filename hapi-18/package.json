@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "~18.3.1"
+    "@hapi/hapi": "~20.0.0"
   },
   "devDependencies": {
     "eslint": "~6.0.1",
